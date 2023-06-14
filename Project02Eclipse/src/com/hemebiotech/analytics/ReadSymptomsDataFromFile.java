@@ -2,44 +2,41 @@ package com.hemebiotech.analytics;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.TreeMap;
 
-public class ReadSymptomsDataFromFile {
+public class ReadSymptomsDataFromFile implements ISymptomsReader {
 
-    String resourceFiles = "symptoms.txt" ;
-    TreeMap<String, Integer> symptoms = new TreeMap<>();
+    private String filePath;
 
-    public ReadSymptomsDataFromFile() throws IOException {
-
-        String path = ".\\Project02Eclipse\\src\\com\\hemebiotech\\analytics\\ressource\\" ;
-        String completePath = path + resourceFiles;
+    public ReadSymptomsDataFromFile(String filePath) {
+        this.filePath = filePath;
+    }
 
 
-        BufferedReader reader = new BufferedReader(new FileReader(completePath));
-        String line = reader.readLine();
+    public TreeMap<String, Integer> GetSymptoms() {
 
-        try {
-            while (line != null) {
-                System.out.println("Symptom from file : " + line);
-                symptoms.putIfAbsent(line, 0);
-                symptoms.put(line, symptoms.get(line) + 1);
+        TreeMap<String, Integer> result = new TreeMap<>();
 
-                line = reader.readLine();
+        if (filePath != null) {
+            try {
+
+                BufferedReader reader = new BufferedReader(new FileReader(filePath));
+                String line = reader.readLine();
+
+                while (line != null) {
+                    System.out.println("Symptom from file : " + line);
+                    result.putIfAbsent(line, 0);
+                    result.put(line, result.get(line) + 1);
+
+                    line = reader.readLine();
+                }
+                reader.close();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-            reader.close();
 
-        } catch (Exception e) {
-            e.printStackTrace();
         }
 
-
-    }
-
-    public TreeMap<String, Integer> getSymptoms() {
-        return symptoms;
+        return result;
     }
 }
-
-
-

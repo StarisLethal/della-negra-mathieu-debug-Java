@@ -6,14 +6,18 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class WriteSymptomsDataToFile {
+public class WriteSymptomsDataToFile implements ISymptomsWriter {
 
     TreeMap<String, Integer> symptoms;
 
-    public WriteSymptomsDataToFile(TreeMap<String, Integer> symptoms) throws IOException {
+    public WriteSymptomsDataToFile(TreeMap<String, Integer> symptoms) {
+        this.symptoms = symptoms;
+    }
 
+    @Override
+    public TreeMap<String, Integer> WriteSymptoms() throws IOException {
 
-        FileWriter fileWriter = new FileWriter(".\\Project02Eclipse\\src\\com\\hemebiotech\\analytics\\ressource\\result.out");
+        FileWriter fileWriter = new FileWriter("Project02Eclipse\\src\\com\\hemebiotech\\analytics\\ressource\\result.out");
         BufferedWriter writer = new BufferedWriter(fileWriter);
 
         try {
@@ -29,10 +33,9 @@ public class WriteSymptomsDataToFile {
 
         } catch (Exception e) {
             e.printStackTrace();
-        }
-    }
 
-    public void setSymptoms(TreeMap<String, Integer> symptoms) {
-        this.symptoms = symptoms;
+        }
+
+        return symptoms;
     }
 }
