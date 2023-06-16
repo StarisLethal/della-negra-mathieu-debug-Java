@@ -1,10 +1,5 @@
 memberSearchIndex = [{
     "p": "com.hemebiotech.analytics",
-    "c": "AnalyticsCounter",
-    "l": "AnalyticsCounter()",
-    "u": "%3Cinit%3E()"
-}, {
-    "p": "com.hemebiotech.analytics",
     "c": "Application",
     "l": "Application()",
     "u": "%3Cinit%3E()"
@@ -33,7 +28,7 @@ memberSearchIndex = [{
 }, {
     "p": "com.hemebiotech.analytics",
     "c": "WriteSymptomsDataToFile",
-    "l": "WriteSymptomsDataToFile(TreeMap<String, Integer>)",
-    "u": "%3Cinit%3E(java.util.TreeMap)"
+    "l": "WriteSymptomsDataToFile(TreeMap<String, Integer>, String)",
+    "u": "%3Cinit%3E(java.util.TreeMap,java.lang.String)"
 }];
 updateSearchResults();

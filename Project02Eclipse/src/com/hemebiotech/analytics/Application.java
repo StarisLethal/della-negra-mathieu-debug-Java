@@ -7,11 +7,11 @@ public class Application {
 
     public static void main(String[] args) throws IOException {
 
-        ReadSymptomsDataFromFile read = new ReadSymptomsDataFromFile("Project02Eclipse\\src\\com\\hemebiotech\\analytics\\ressource\\symptoms.txt");
+        ReadSymptomsDataFromFile read = new ReadSymptomsDataFromFile("symptoms.txt");
 
         TreeMap<String, Integer> symptoms = new TreeMap<>(read.GetSymptoms());
 
-        WriteSymptomsDataToFile write = new WriteSymptomsDataToFile(symptoms);
+        WriteSymptomsDataToFile write = new WriteSymptomsDataToFile(symptoms, "result.out");
 
         write.WriteSymptoms();
     }
