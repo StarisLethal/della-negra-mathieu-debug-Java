@@ -1,11 +1,16 @@
 memberSearchIndex = [{
     "p": "com.hemebiotech.analytics",
+    "c": "AnalyticsCounter",
+    "l": "AnalyticsCounter(String, String)",
+    "u": "%3Cinit%3E(java.lang.String,java.lang.String)"
+}, {
+    "p": "com.hemebiotech.analytics",
     "c": "Application",
     "l": "Application()",
     "u": "%3Cinit%3E()"
-}, {"p": "com.hemebiotech.analytics", "c": "ISymptomsReader", "l": "GetSymptoms()"}, {
+}, {"p": "com.hemebiotech.analytics", "c": "AnalyticsCounter", "l": "GetSymptoms()"}, {
     "p": "com.hemebiotech.analytics",
-    "c": "ReadSymptomsDataFromFile",
+    "c": "ISymptomsReader",
     "l": "GetSymptoms()"
 }, {
     "p": "com.hemebiotech.analytics",
@@ -14,21 +19,7 @@ memberSearchIndex = [{
     "u": "main(java.lang.String[])"
 }, {
     "p": "com.hemebiotech.analytics",
-    "c": "ReadSymptomsDataFromFile",
-    "l": "ReadSymptomsDataFromFile(String)",
-    "u": "%3Cinit%3E(java.lang.String)"
-}, {
-    "p": "com.hemebiotech.analytics",
-    "c": "ISymptomsWriter",
+    "c": "AnalyticsCounter",
     "l": "WriteSymptoms()"
-}, {
-    "p": "com.hemebiotech.analytics",
-    "c": "WriteSymptomsDataToFile",
-    "l": "WriteSymptoms()"
-}, {
-    "p": "com.hemebiotech.analytics",
-    "c": "WriteSymptomsDataToFile",
-    "l": "WriteSymptomsDataToFile(TreeMap<String, Integer>, String)",
-    "u": "%3Cinit%3E(java.util.TreeMap,java.lang.String)"
-}];
+}, {"p": "com.hemebiotech.analytics", "c": "ISymptomsWriter", "l": "WriteSymptoms()"}];
 updateSearchResults();

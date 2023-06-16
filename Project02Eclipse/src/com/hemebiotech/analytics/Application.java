@@ -1,19 +1,17 @@
 package com.hemebiotech.analytics;
 
 import java.io.IOException;
-import java.util.TreeMap;
 
 public class Application {
 
     public static void main(String[] args) throws IOException {
 
-        ReadSymptomsDataFromFile read = new ReadSymptomsDataFromFile("symptoms.txt");
+        AnalyticsCounter ac = new AnalyticsCounter("symptoms.txt", "result.out");
 
-        TreeMap<String, Integer> symptoms = new TreeMap<>(read.GetSymptoms());
+        ac.GetSymptoms();
 
-        WriteSymptomsDataToFile write = new WriteSymptomsDataToFile(symptoms, "result.out");
+        ac.WriteSymptoms();
 
-        write.WriteSymptoms();
     }
 
 }
