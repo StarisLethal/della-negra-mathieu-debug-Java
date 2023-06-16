@@ -4,15 +4,13 @@ import java.util.TreeMap;
 
 public class AnalyticsCounter implements ISymptomsReader, ISymptomsWriter {
 
-    String symptomsPath;
-    String resultPath;
+    ISymptomsReader reader;
+    ISymptomsWriter writer;
 
 
-    TreeMap<String, Integer> results = new TreeMap<>();
-
-    public AnalyticsCounter(String symptomsPath, String resultPath) {
-        this.symptomsPath = symptomsPath;
-        this.resultPath = resultPath;
+    public AnalyticsCounter(ISymptomsReader readP, ISymptomsWriter writeP) {
+        this.reader = readP;
+        this.writer = writeP;
 
     }
 
@@ -20,20 +18,15 @@ public class AnalyticsCounter implements ISymptomsReader, ISymptomsWriter {
     @Override
     public TreeMap<String, Integer> GetSymptoms() {
 
-        ReadSymptomsDataFromFile read = new ReadSymptomsDataFromFile(symptomsPath);
+        return reader.GetSymptoms();
 
-        results = read.GetSymptoms();
-
-        return results;
     }
 
     // This class write info in an outfile from a treemap
     @Override
     public TreeMap<String, Integer> WriteSymptoms() {
 
-
-        WriteSymptomsDataToFile write = new WriteSymptomsDataToFile(results, resultPath);
-        write.WriteSymptoms();
+        writer.WriteSymptoms();
 
         return null;
     }

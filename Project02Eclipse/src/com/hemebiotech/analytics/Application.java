@@ -7,7 +7,10 @@ public class Application {
 
     public static void main(String[] args) throws IOException {
 
-        AnalyticsCounter ac = new AnalyticsCounter("symptoms.txt", "result.out");
+        ReadSymptomsDataFromFile read = new ReadSymptomsDataFromFile("symptoms.txt");
+        WriteSymptomsDataToFile write = new WriteSymptomsDataToFile(read.result, "result.out");
+
+        AnalyticsCounter ac = new AnalyticsCounter(read, write);
 
         ac.GetSymptoms();
 
