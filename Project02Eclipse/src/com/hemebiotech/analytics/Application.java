@@ -8,14 +8,20 @@ public class Application {
     public static void main(String[] args) throws IOException {
 
         ReadSymptomsDataFromFile read = new ReadSymptomsDataFromFile("symptoms.txt");
-        WriteSymptomsDataToFile write = new WriteSymptomsDataToFile(read.result, "result.out");
+
+
+        WriteSymptomsDataToFile write = new WriteSymptomsDataToFile("result.out");
+
 
         AnalyticsCounter ac = new AnalyticsCounter(read, write);
 
         ac.GetSymptoms();
 
+        ac.CountSymptoms();
 
-        ac.WriteSymptoms();
+        ac.SortSymptoms();
+
+        ac.WriteSymptoms(read.symptomsSorted);
 
     }
 

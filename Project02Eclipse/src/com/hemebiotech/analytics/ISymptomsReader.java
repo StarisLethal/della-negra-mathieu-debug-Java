@@ -1,11 +1,16 @@
 package com.hemebiotech.analytics;
 
-import java.util.TreeMap;
+import java.util.List;
+import java.util.Map;
 
 public interface ISymptomsReader {
 
 
-    TreeMap<String, Integer> GetSymptoms();
+    List<String> GetSymptoms();
+
+    Map<String, Integer> CountSymptoms();
+
+    Map<String, Integer> SortSymptoms();
 
 }
 

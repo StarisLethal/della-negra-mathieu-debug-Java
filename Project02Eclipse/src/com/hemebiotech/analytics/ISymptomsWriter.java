@@ -4,7 +4,7 @@ import java.util.TreeMap;
 
 public interface ISymptomsWriter {
 
-    TreeMap<String, Integer> WriteSymptoms();
+    TreeMap<String, Integer> WriteSymptoms(TreeMap<String, Integer> symptoms);
 
 }
 

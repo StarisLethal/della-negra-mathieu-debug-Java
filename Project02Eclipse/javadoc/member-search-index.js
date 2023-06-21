@@ -1,13 +1,25 @@
 memberSearchIndex = [{
     "p": "com.hemebiotech.analytics",
     "c": "AnalyticsCounter",
-    "l": "AnalyticsCounter(String, String)",
-    "u": "%3Cinit%3E(java.lang.String,java.lang.String)"
+    "l": "AnalyticsCounter(ISymptomsReader, ISymptomsWriter)",
+    "u": "%3Cinit%3E(com.hemebiotech.analytics.ISymptomsReader,com.hemebiotech.analytics.ISymptomsWriter)"
 }, {
     "p": "com.hemebiotech.analytics",
     "c": "Application",
     "l": "Application()",
     "u": "%3Cinit%3E()"
+}, {
+    "p": "com.hemebiotech.analytics",
+    "c": "AnalyticsCounter",
+    "l": "CountSymptoms()"
+}, {
+    "p": "com.hemebiotech.analytics",
+    "c": "ISymptomsReader",
+    "l": "CountSymptoms()"
+}, {
+    "p": "com.hemebiotech.analytics",
+    "c": "ReadSymptomsDataFromFile",
+    "l": "CountSymptoms()"
 }, {"p": "com.hemebiotech.analytics", "c": "AnalyticsCounter", "l": "GetSymptoms()"}, {
     "p": "com.hemebiotech.analytics",
     "c": "ISymptomsReader",
@@ -29,19 +41,30 @@ memberSearchIndex = [{
 }, {
     "p": "com.hemebiotech.analytics",
     "c": "AnalyticsCounter",
-    "l": "WriteSymptoms()"
+    "l": "SortSymptoms()"
+}, {"p": "com.hemebiotech.analytics", "c": "ISymptomsReader", "l": "SortSymptoms()"}, {
+    "p": "com.hemebiotech.analytics",
+    "c": "ReadSymptomsDataFromFile",
+    "l": "SortSymptoms()"
+}, {
+    "p": "com.hemebiotech.analytics",
+    "c": "AnalyticsCounter",
+    "l": "WriteSymptoms(TreeMap<String, Integer>)",
+    "u": "WriteSymptoms(java.util.TreeMap)"
 }, {
     "p": "com.hemebiotech.analytics",
     "c": "ISymptomsWriter",
-    "l": "WriteSymptoms()"
+    "l": "WriteSymptoms(TreeMap<String, Integer>)",
+    "u": "WriteSymptoms(java.util.TreeMap)"
 }, {
     "p": "com.hemebiotech.analytics",
     "c": "WriteSymptomsDataToFile",
-    "l": "WriteSymptoms()"
+    "l": "WriteSymptoms(TreeMap<String, Integer>)",
+    "u": "WriteSymptoms(java.util.TreeMap)"
 }, {
     "p": "com.hemebiotech.analytics",
     "c": "WriteSymptomsDataToFile",
-    "l": "WriteSymptomsDataToFile(TreeMap<String, Integer>, String)",
-    "u": "%3Cinit%3E(java.util.TreeMap,java.lang.String)"
+    "l": "WriteSymptomsDataToFile(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
 }];
 updateSearchResults();

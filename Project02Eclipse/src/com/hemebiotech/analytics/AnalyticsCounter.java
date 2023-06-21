@@ -1,8 +1,15 @@
 package com.hemebiotech.analytics;
 
+import java.util.List;
+import java.util.Map;
 import java.util.TreeMap;
 
+
+/**
+ * @AnalyticsCounter Implements interface and call every methode
+ */
 public class AnalyticsCounter implements ISymptomsReader, ISymptomsWriter {
+
 
     ISymptomsReader reader;
     ISymptomsWriter writer;
@@ -16,19 +23,33 @@ public class AnalyticsCounter implements ISymptomsReader, ISymptomsWriter {
 
     // This class read a file line by line and then put it in a TreeMap
     @Override
-    public TreeMap<String, Integer> GetSymptoms() {
+    public List<String> GetSymptoms() {
 
         return reader.GetSymptoms();
 
     }
 
-    // This class write info in an outfile from a treemap
     @Override
-    public TreeMap<String, Integer> WriteSymptoms() {
+    public Map<String, Integer> CountSymptoms() {
 
-        writer.WriteSymptoms();
-
-        return null;
+        return reader.CountSymptoms();
     }
+
+    @Override
+    public Map<String, Integer> SortSymptoms() {
+        return reader.SortSymptoms();
+    }
+
+
+    @Override
+
+    public TreeMap<String, Integer> WriteSymptoms(TreeMap<String, Integer> symptoms) {
+
+        return writer.WriteSymptoms(symptoms);
+
+
+    }
+
 }
+
 
