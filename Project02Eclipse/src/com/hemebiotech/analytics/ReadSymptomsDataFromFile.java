@@ -10,24 +10,19 @@ import java.util.*;
 // This class read a file line by line and then put it in a TreeMap
 public class ReadSymptomsDataFromFile extends TreeMap<String, Integer> implements ISymptomsReader {
 
-    List<String> result = new ArrayList<>() {
-    };
+    private final String path = "Project02Eclipse\\src\\com\\hemebiotech\\analytics\\ressource\\";
     Map<String, Integer> symptoms = new HashMap<>();
-
     TreeMap<String, Integer> symptomsSorted;
-
-
-    private String path = "Project02Eclipse\\src\\com\\hemebiotech\\analytics\\ressource\\";
-    private String filePath;
+    private final String filePath;
+    List<String> result = new ArrayList<>();
 
     public ReadSymptomsDataFromFile(String filePath) {
         this.filePath = filePath;
     }
 
 
-    /**
-     * @GetSympoms Read a files and generate an List from it
-     */
+    // GetSymptoms Read a files and generate a List from it
+
     public List<String> GetSymptoms() {
 
         String completePath = path + filePath;
@@ -35,9 +30,12 @@ public class ReadSymptomsDataFromFile extends TreeMap<String, Integer> implement
         if (filePath != null) {
             try {
 
+                // Instantiate Reader and declare variable for the next line
+
                 BufferedReader reader = new BufferedReader(new FileReader(completePath));
                 String line = reader.readLine();
 
+                // Read each line add it to list and print it in console
 
                 while (line != null) {
                     System.out.println("Symptom from file : " + line);
@@ -46,6 +44,9 @@ public class ReadSymptomsDataFromFile extends TreeMap<String, Integer> implement
                     line = reader.readLine();
                 }
                 reader.close();
+
+                // Treat Exception
+
             } catch (IOException e) {
                 System.err.println("Problem with the Input File");
                 e.printStackTrace();
@@ -59,9 +60,9 @@ public class ReadSymptomsDataFromFile extends TreeMap<String, Integer> implement
         return result;
     }
 
-    /**
-     * @CountSymptoms Put each occurrence of the previous list in a Map and count it
-     */
+
+    // CountSymptoms Put each occurrence of the previous list in a Map and count it
+
 
     public Map<String, Integer> CountSymptoms() {
 
@@ -73,9 +74,8 @@ public class ReadSymptomsDataFromFile extends TreeMap<String, Integer> implement
         return symptoms;
     }
 
-    /**
-     * @SortSymptoms Transfer the previous Map in a TreeMap for sort it
-     */
+
+    // SortSymptoms Transfer the previous Map in a TreeMap for sort it
 
     public TreeMap<String, Integer> SortSymptoms() {
 

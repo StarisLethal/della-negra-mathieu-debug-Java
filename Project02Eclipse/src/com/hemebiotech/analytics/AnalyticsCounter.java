@@ -5,15 +5,15 @@ import java.util.Map;
 import java.util.TreeMap;
 
 
-/**
- * @AnalyticsCounter Implements interface and call every methode
- */
-public class AnalyticsCounter implements ISymptomsReader, ISymptomsWriter {
+// AnalyticsCounter Implements and instantiate interface , call every method
+
+public class AnalyticsCounter {
 
 
     ISymptomsReader reader;
     ISymptomsWriter writer;
 
+    // Instantiate Interface
 
     public AnalyticsCounter(ISymptomsReader readP, ISymptomsWriter writeP) {
         this.reader = readP;
@@ -21,27 +21,24 @@ public class AnalyticsCounter implements ISymptomsReader, ISymptomsWriter {
 
     }
 
-    // This class read a file line by line and then put it in a TreeMap
-    @Override
     public List<String> GetSymptoms() {
 
         return reader.GetSymptoms();
 
     }
 
-    @Override
+
     public Map<String, Integer> CountSymptoms() {
 
         return reader.CountSymptoms();
     }
 
-    @Override
+
     public Map<String, Integer> SortSymptoms() {
+
         return reader.SortSymptoms();
     }
 
-
-    @Override
 
     public TreeMap<String, Integer> WriteSymptoms(TreeMap<String, Integer> symptoms) {
 

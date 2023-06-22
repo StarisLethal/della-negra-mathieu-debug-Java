@@ -16,18 +16,18 @@ public class WriteSymptomsDataToFile implements ISymptomsWriter {
         this.filePath = file;
     }
 
-    /**
-     * @WriteSymptoms Take every occurrence of the TreeMap from the ReadSymptomsDataFromFile and write it in an output file
-     */
+
+    // WriteSymptoms Take every occurrence of the TreeMap from the ReadSymptomsDataFromFile and write it in an output file
+
 
     @Override
     public TreeMap<String, Integer> WriteSymptoms(TreeMap<String, Integer> symptoms) {
 
         String completePath = path + filePath;
-        System.out.println(symptoms);
-
 
         try {
+
+            // Instantiate writer
 
             FileWriter fileWriter = new FileWriter(completePath);
             BufferedWriter writer = new BufferedWriter(fileWriter);
@@ -44,9 +44,12 @@ public class WriteSymptomsDataToFile implements ISymptomsWriter {
 
             writer.close();
 
+            // Treat exception
+
         } catch (IOException e) {
             System.err.println("Problem with the Output filePath");
             e.printStackTrace();
+
         } catch (Exception e) {
             System.err.println("Problem to write");
             e.printStackTrace();
