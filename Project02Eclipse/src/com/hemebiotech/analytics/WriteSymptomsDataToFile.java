@@ -6,7 +6,9 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.TreeMap;
 
-// This class write info in an outfile from a treemap in parameter
+/**
+ * This class write info in an outfile from a treemap in parameter
+ */
 public class WriteSymptomsDataToFile implements ISymptomsWriter {
     String path = "Project02Eclipse\\src\\com\\hemebiotech\\analytics\\ressource\\";
     String filePath;
@@ -20,7 +22,6 @@ public class WriteSymptomsDataToFile implements ISymptomsWriter {
     // WriteSymptoms Take every occurrence of the TreeMap from the ReadSymptomsDataFromFile and write it in an output file
 
 
-    @Override
     public TreeMap<String, Integer> WriteSymptoms(TreeMap<String, Integer> symptoms) {
 
         String completePath = path + filePath;

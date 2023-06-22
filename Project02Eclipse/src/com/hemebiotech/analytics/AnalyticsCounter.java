@@ -5,8 +5,9 @@ import java.util.Map;
 import java.util.TreeMap;
 
 
-// AnalyticsCounter Implements and instantiate interface , call every method
-
+/**
+ * AnalyticsCounter Implements and instantiate interface , call every method
+ */
 public class AnalyticsCounter {
 
 

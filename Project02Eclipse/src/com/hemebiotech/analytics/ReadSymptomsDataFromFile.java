@@ -21,7 +21,9 @@ public class ReadSymptomsDataFromFile extends TreeMap<String, Integer> implement
     }
 
 
-    // GetSymptoms Read a files and generate a List from it
+    /**
+     * GetSymptoms Read a files and generate a List from it
+     */
 
     public List<String> GetSymptoms() {
 
@@ -61,7 +63,9 @@ public class ReadSymptomsDataFromFile extends TreeMap<String, Integer> implement
     }
 
 
-    // CountSymptoms Put each occurrence of the previous list in a Map and count it
+    /**
+     * CountSymptoms Put each occurrence of the previous list in a Map and count it
+     */
 
 
     public Map<String, Integer> CountSymptoms() {
@@ -75,7 +79,9 @@ public class ReadSymptomsDataFromFile extends TreeMap<String, Integer> implement
     }
 
 
-    // SortSymptoms Transfer the previous Map in a TreeMap for sort it
+    /**
+     * SortSymptoms Transfer the previous Map in a TreeMap for sort it
+     */
 
     public TreeMap<String, Integer> SortSymptoms() {
 
